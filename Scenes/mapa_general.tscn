@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://ds0yve6c6jkpd"]
+
+[ext_resource type="PackedScene" uid="uid://puuo0314jbq3" path="res://Modelos/Villa Metamorfosis v1.blend" id="1_s84pg"]
+[ext_resource type="Script" uid="uid://c71f07v10fl6m" path="res://Scripts/Personaje/personaje.gd" id="2_u1v51"]
+[ext_resource type="Shape3D" uid="uid://cqmbbj4xqk777" path="res://pj.tres" id="3_3udvk"]
+
+[node name="mapa-general" type="Node3D" unique_id=1495185574]
+
+[node name="Villa Metamorfosis v1" parent="." unique_id=236234595 instance=ExtResource("1_s84pg")]
+
+[node name="Personaje" type="CharacterBody3D" parent="." unique_id=1723570349]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3353467, 2.212726)
+script = ExtResource("2_u1v51")
+
+[node name="Camara" type="Camera3D" parent="Personaje" unique_id=44591841]
+fov = 90.0
+
+[node name="Collider" type="CollisionShape3D" parent="Personaje" unique_id=646623201]
+shape = ExtResource("3_3udvk")
