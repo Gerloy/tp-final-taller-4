@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://bagvd6m1lu3tv"]
+
+[ext_resource type="PackedScene" uid="uid://cx8vcgdjymtck" path="res://Modelos/iglesiaV3.blend" id="1_7w5hq"]
+
+[node name="PruebaIglesia" type="Node3D" unique_id=361472537]
+
+[node name="iglesiaV3" parent="." unique_id=1512501375 instance=ExtResource("1_7w5hq")]
