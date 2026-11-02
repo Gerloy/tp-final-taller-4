@@ -1,7 +1,7 @@
 extends CharacterBody3D
 
 
-const SPEED = 3.0
+const SPEED = 1.5
 const JUMP_VELOCITY = 5.0
 
 
@@ -16,7 +16,11 @@ func _physics_process(delta: float) -> void:
 
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
-	var input_dir := Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
+	var input_dir := Input.get_vector("ui_up", "ui_down", "ui_right", "ui_left")
+	if (input_dir.x != 0) or (input_dir.y != 0):
+		$Animacion.play("caminata");
+	else:
+		$Animacion.stop();
 	var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
 	if direction:
 		velocity.x = direction.x * SPEED

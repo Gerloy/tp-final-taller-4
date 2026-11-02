@@ -1,0 +1,67 @@
+[gd_resource type="SpriteFrames" format=3 uid="uid://bhdqvsa1dffax"]
+
+[ext_resource type="Texture2D" uid="uid://bfp8fp87qut5l" path="res://Sprites/Mati/Oruga_Final/caminar.png" id="1_tr63m"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xnpdq"]
+atlas = ExtResource("1_tr63m")
+region = Rect2(0, 0, 792, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qhrx7"]
+atlas = ExtResource("1_tr63m")
+region = Rect2(792, 0, 792, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ijenp"]
+atlas = ExtResource("1_tr63m")
+region = Rect2(1584, 0, 792, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_on80k"]
+atlas = ExtResource("1_tr63m")
+region = Rect2(2376, 0, 792, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_o3i2h"]
+atlas = ExtResource("1_tr63m")
+region = Rect2(3168, 0, 792, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_77wv3"]
+atlas = ExtResource("1_tr63m")
+region = Rect2(3960, 0, 792, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_01whx"]
+atlas = ExtResource("1_tr63m")
+region = Rect2(4752, 0, 792, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oy1l0"]
+atlas = ExtResource("1_tr63m")
+region = Rect2(5544, 0, 792, 1080)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xnpdq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qhrx7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ijenp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_on80k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_o3i2h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_77wv3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_01whx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oy1l0")
+}],
+"loop": 1,
+"name": &"caminata",
+"speed": 10.0
+}]
