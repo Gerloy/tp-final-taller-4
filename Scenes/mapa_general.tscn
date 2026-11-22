@@ -35,21 +35,20 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.3353467, 41.212727)
 script = ExtResource("2_u1v51")
 
 [node name="Camara" type="Camera3D" parent="Personaje" unique_id=44591841]
-transform = Transform3D(-4.2221956e-08, -0.17364818, 0.9848078, 1.1313331e-08, 0.9848078, 0.17364818, -1, 1.8473223e-08, -3.961597e-08, 6.637, 2.301, -0.29999924)
-fov = 45.0
+transform = Transform3D(0.030539012, -0.104479685, 0.9940581, 0, 0.9945219, 0.104528435, -0.9995336, -0.003192195, 0.030371716, 3.2197347, 0.6306001, -0.6355858)
+fov = 60.0
 
 [node name="Collider" type="CollisionShape3D" parent="Personaje" unique_id=646623201]
 shape = ExtResource("3_3udvk")
 
 [node name="Animacion" type="AnimatedSprite3D" parent="Personaje" unique_id=1590220776]
-transform = Transform3D(-6.5567085e-09, 0, 0.15, 0, 0.15, 0, -0.15, 0, -6.5567085e-09, 0, 0, 0)
+transform = Transform3D(-6.5567085e-09, 0, 0.15, 0, 0.15, 0, -0.15, 0, -6.5567085e-09, 0, -0.11701703, 0)
 sprite_frames = ExtResource("4_relhg")
 animation = &"caminata"
-frame_progress = 0.9873973
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1327019073]
 environment = SubResource("Environment_f6yfp")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=667573451]
-transform = Transform3D(-2.5656832e-06, 3.2000005, -1.4993148e-21, -7.69705e-06, -6.9738997e-15, -7.080314, -58.695984, -1.3987645e-07, 9.2847097e-07, -12.699542, 8, -1.4760361)
+transform = Transform3D(-2.5656832e-06, 3.2000005, -1.4993148e-21, -7.69705e-06, -6.9738997e-15, -7.080314, -58.695984, -1.3987645e-07, 9.2847097e-07, -12.054823, 6, -1.4760361)
 mesh = SubResource("PlaneMesh_f6yfp")

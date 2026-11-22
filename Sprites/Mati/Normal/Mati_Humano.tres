@@ -182,5 +182,5 @@ animations = [{
 }],
 "loop": 1,
 "name": &"caminata",
-"speed": 15.0
+"speed": 12.0
 }]
