@@ -1,42 +1,45 @@
 [gd_resource type="SpriteFrames" format=3 uid="uid://bhdqvsa1dffax"]
 
-[ext_resource type="Texture2D" uid="uid://bfp8fp87qut5l" path="res://Sprites/Mati/Oruga_Final/caminar.png" id="1_tr63m"]
+[ext_resource type="Texture2D" uid="uid://c20pjqr54oxlr" path="res://Sprites/Mati/Oruga_Final/caminar2.png" id="1_tr63m"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_xnpdq"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_tr63m"]
 atlas = ExtResource("1_tr63m")
 region = Rect2(0, 0, 792, 1080)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_qhrx7"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_xnpdq"]
 atlas = ExtResource("1_tr63m")
 region = Rect2(792, 0, 792, 1080)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ijenp"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_qhrx7"]
 atlas = ExtResource("1_tr63m")
 region = Rect2(1584, 0, 792, 1080)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_on80k"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ijenp"]
 atlas = ExtResource("1_tr63m")
 region = Rect2(2376, 0, 792, 1080)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_o3i2h"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_on80k"]
 atlas = ExtResource("1_tr63m")
 region = Rect2(3168, 0, 792, 1080)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_77wv3"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_o3i2h"]
 atlas = ExtResource("1_tr63m")
 region = Rect2(3960, 0, 792, 1080)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_01whx"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_77wv3"]
 atlas = ExtResource("1_tr63m")
 region = Rect2(4752, 0, 792, 1080)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_oy1l0"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_01whx"]
 atlas = ExtResource("1_tr63m")
 region = Rect2(5544, 0, 792, 1080)
 
 [resource]
 animations = [{
 "frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tr63m")
+}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_xnpdq")
 }, {
@@ -57,9 +60,6 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_01whx")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_oy1l0")
 }],
 "loop": 1,
 "name": &"caminata",

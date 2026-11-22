@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://puuo0314jbq3" path="res://Modelos/Villa Metamorfosis v1.blend" id="1_s84pg"]
 [ext_resource type="Script" uid="uid://c71f07v10fl6m" path="res://Scripts/Personaje/personaje.gd" id="2_u1v51"]
 [ext_resource type="Shape3D" uid="uid://cqmbbj4xqk777" path="res://pj.tres" id="3_3udvk"]
-[ext_resource type="SpriteFrames" uid="uid://bhdqvsa1dffax" path="res://Sprites/Mati/Oruga_Final/Mati_Oruga_Final.tres" id="4_vjgme"]
+[ext_resource type="SpriteFrames" uid="uid://c0g1dxgwmyf6n" path="res://Sprites/Mati/Normal/Mati_Humano.tres" id="4_relhg"]
 [ext_resource type="Texture2D" uid="uid://utfxn2g74key" path="res://Modelos/texturas_nuestras/fondo.png" id="5_relhg"]
 
 [sub_resource type="Environment" id="Environment_f6yfp"]
@@ -42,9 +42,10 @@ fov = 45.0
 shape = ExtResource("3_3udvk")
 
 [node name="Animacion" type="AnimatedSprite3D" parent="Personaje" unique_id=1590220776]
-transform = Transform3D(-6.5567076e-09, 0, 0.14999999, 0, 0.14999999, 0, -0.14999999, 0, -6.5567076e-09, 0, 0, 0)
-sprite_frames = ExtResource("4_vjgme")
+transform = Transform3D(-6.5567085e-09, 0, 0.15, 0, 0.15, 0, -0.15, 0, -6.5567085e-09, 0, 0, 0)
+sprite_frames = ExtResource("4_relhg")
 animation = &"caminata"
+frame_progress = 0.9873973
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1327019073]
 environment = SubResource("Environment_f6yfp")
