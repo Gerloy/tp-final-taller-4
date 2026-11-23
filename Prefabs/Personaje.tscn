@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://t5m25g8gqm58"]
+
+[ext_resource type="Script" uid="uid://c71f07v10fl6m" path="res://Scripts/Personaje/personaje.gd" id="1_p6gmi"]
+[ext_resource type="Shape3D" uid="uid://cqmbbj4xqk777" path="res://pj.tres" id="2_s1aqk"]
+[ext_resource type="SpriteFrames" uid="uid://c0g1dxgwmyf6n" path="res://Sprites/Mati/Normal/Mati_Humano.tres" id="3_rup75"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3gkk6"]
+
+[node name="Personaje" type="CharacterBody3D" unique_id=1055967324]
+script = ExtResource("1_p6gmi")
+
+[node name="Camara" type="Camera3D" parent="." unique_id=436820449]
+transform = Transform3D(0.030539012, -0.104479685, 0.9940581, 0, 0.9945219, 0.10452844, -0.9995336, -0.0031921952, 0.030371716, 3.2197347, 0.6306001, 0.2572298)
+fov = 60.0
+
+[node name="Collider" type="CollisionShape3D" parent="." unique_id=1477233399]
+shape = ExtResource("2_s1aqk")
+
+[node name="Animacion" type="AnimatedSprite3D" parent="." unique_id=1765146256]
+transform = Transform3D(-5.6824803e-09, 0, 0.13, 0, 0.13, 0, -0.13, 0, -5.6824803e-09, 0, -0.2403207, 0)
+sprite_frames = ExtResource("3_rup75")
+animation = &"caminata"
+
+[node name="Area3D" type="Area3D" parent="." unique_id=111887255]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1552188451]
+shape = SubResource("BoxShape3D_3gkk6")
+
+[connection signal="area_entered" from="Area3D" to="." method="enColision"]
+[connection signal="area_exited" from="Area3D" to="." method="saleColision"]

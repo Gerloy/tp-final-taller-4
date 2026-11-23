@@ -9,6 +9,7 @@ enum ESTADO {
 var estado:ESTADO;
 
 func comenzarDialogo(_dialogos:Array):
+	await get_tree().create_timer(0.1).timeout;
 	estado = ESTADO.DIALOGO;
 	#Aca se va a instanciar el dialogo que va a hacer todo
 	var dialogo = load("res://Prefabs/UI/dialogo.tscn").instantiate();
@@ -16,6 +17,7 @@ func comenzarDialogo(_dialogos:Array):
 	get_node("/root").add_child(dialogo);
 
 func finalizarDialogo():
+	await get_tree().create_timer(0.1).timeout;
 	estado = ESTADO.NORMAL;
 
 func comenzarCinematica():
@@ -25,7 +27,8 @@ func finalizarCinematica():
 	estado = ESTADO.NORMAL;
 
 func getEstado():
-	if estado == ESTADO.NORMAL:
-		return "NORMAL";
-	elif estado == ESTADO.DIALOGO:
-		return "DIALOGO";
+	return estado;
+	#if estado == ESTADO.NORMAL:
+		#return "NORMAL";
+	#elif estado == ESTADO.DIALOGO:
+		#return "DIALOGO";

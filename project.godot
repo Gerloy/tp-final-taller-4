@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="tp-final-taller-4"
-run/main_scene="uid://ds0yve6c6jkpd"
+run/main_scene="uid://cdnjwnb6clnhq"
 config/features=PackedStringArray("4.7", "GL Compatibility")
 config/icon="res://icon.svg"
 

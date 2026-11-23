@@ -7,25 +7,30 @@ const SPEED = 2
 @export var dialogo_interaccion:Array;
 @export var puede_interactuar = false;
 
+var flipea;
+
+var esta_en_dialogo = false;
+
 func process(_delta:float) -> void:
-	if puede_interactuar:
-		if Input.is_action_just_pressed("accion"): #and dialogo_interaccion.size() > 0:
-			print("Entra a dialogo");
+	if puede_interactuar and !esta_en_dialogo:
+		if Input.is_action_just_pressed("accion"):
 			Global.comenzarDialogo(dialogo_interaccion);
+	if Global.getEstado() == Global.ESTADO.DIALOGO:
+		esta_en_dialogo = true;
+		$Animacion.stop();
+	else:
+		esta_en_dialogo = false;
 
 
-func _physics_process(delta: float) -> void:
-	if Global.getEstado() == "NORMAL":
+func _physics_process(_delta: float) -> void:
+	if Global.getEstado() == Global.ESTADO.NORMAL:
 		# Add the gravity.
 		if not is_on_floor():
-			velocity += get_gravity() * delta
+			velocity += get_gravity() * _delta
 
-		# Handle jump.
 		#if Input.is_action_just_pressed("accion") and is_on_floor():
 		#	velocity.y = JUMP_VELOCITY
 
-		# Get the input direction and handle the movement/deceleration.
-		# As good practice, you should replace UI actions with custom gameplay actions.
 		var input_dir := Input.get_vector("arriba", "abajo", "derecha", "izquierda")
 		if Input.is_action_pressed("correr"): input_dir = input_dir*2;
 		if (input_dir.x != 0) or (input_dir.y != 0):
@@ -33,7 +38,11 @@ func _physics_process(delta: float) -> void:
 		else:
 			$Animacion.stop();
 		var direction := (transform.basis * Vector3(input_dir.x, 0, input_dir.y)).normalized()
-		if direction.z > 0:
+		if direction.x > 0:
+			flipea = true;
+		elif direction.x < 0:
+			flipea = false;
+		if flipea:
 			$Animacion.flip_h = true;
 		else:
 			$Animacion.flip_h = false;
@@ -46,22 +55,18 @@ func _physics_process(delta: float) -> void:
 
 		move_and_slide()
 		if puede_interactuar:
-			if Input.is_action_just_pressed("accion"): #and dialogo_interaccion.size() > 0:
-				print("Entra a dialogo");
+			if Input.is_action_just_pressed("accion"):
 				Global.comenzarDialogo(dialogo_interaccion);
 
 
 func enColision(area: Area3D) -> void:
-	print("Entro a algo");
 	if (area.label) and (area.label == "Interaccion"):
-		print("Entro a area interactuable");
-		print(area);
 		dialogo_interaccion = area.dialogo;
 		puede_interactuar = true;
-	pass # Replace with function body.
+	if (area.label) and (area.label == "Dialogo-scripteado"):
+		$Animacion.stop();
+		area.iniciar();
 
 func saleColision(_area: Area3D) -> void:
-	print("Salio de area interactuable");
 	dialogo_interaccion = [];
 	puede_interactuar = false;
-	pass # Replace with function body.

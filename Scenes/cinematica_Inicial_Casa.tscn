@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://cdnjwnb6clnhq"]
+
+[ext_resource type="PackedScene" uid="uid://ixqagaf8istk" path="res://Modelos/habitacion.blend" id="1_7cqtp"]
+[ext_resource type="Script" uid="uid://cccbnubmd5oox" path="res://Scripts/Cinematicas/Cinematica_Inicio.gd" id="1_i174p"]
+[ext_resource type="SpriteFrames" uid="uid://c0g1dxgwmyf6n" path="res://Sprites/Mati/Normal/Mati_Humano.tres" id="3_cqrhb"]
+[ext_resource type="Shape3D" uid="uid://cqmbbj4xqk777" path="res://pj.tres" id="4_djui8"]
+
+[sub_resource type="Environment" id="Environment_f6yfp"]
+ambient_light_color = Color(1, 1, 1, 1)
+reflected_light_source = 1
+adjustment_enabled = true
+adjustment_contrast = 0.9
+
+[node name="Cinematica_Inicial_Casa" type="Node3D" unique_id=1165186531]
+script = ExtResource("1_i174p")
+
+[node name="AreaLight3D" type="AreaLight3D" parent="." unique_id=1237555739]
+transform = Transform3D(1, 0, 0, 0, -4.371139e-08, 1, 0, -1, -4.371139e-08, 4.1672416, 18.060879, -0.21134186)
+visible = false
+area_range = 20.0
+area_attenuation = 0.0
+area_size = Vector2(5.5643597, 1)
+
+[node name="habitacion" parent="." unique_id=679674078 instance=ExtResource("1_7cqtp")]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1167234224]
+environment = SubResource("Environment_f6yfp")
+
+[node name="Mati" type="CharacterBody3D" parent="." unique_id=253681809]
+transform = Transform3D(0.9427889, 0, 0.33339027, 0, 1, 0, -0.33339027, 0, 0.9427889, 1.6741819, 0.8808887, 1.5676107)
+
+[node name="Animacion" type="AnimatedSprite3D" parent="Mati" unique_id=1052002435]
+transform = Transform3D(-0.113308355, 0, 0.1885768, 0, 0.22, 0, -0.1885768, 0, -0.113308355, 0, 0.34933996, 0)
+sprite_frames = ExtResource("3_cqrhb")
+animation = &"caminata"
+
+[node name="Collider" type="CollisionShape3D" parent="Mati" unique_id=2108788591]
+shape = ExtResource("4_djui8")
+
+[node name="Camera3D" type="Camera3D" parent="." unique_id=95799992]
+transform = Transform3D(-0.5150381, 0, 0.85716736, 0, 1, 0, -0.85716736, 0, -0.5150381, 4.73239, 2.162007, -0.071062535)
+
+[node name="Marker3D" type="Marker3D" parent="." unique_id=91039997]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.131, 0.881, 5.037)
