@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cwjyu75plybx1"
-path.s3tc="res://.godot/imported/madera oscura.png-80c087719182032002d0f2e90ecd7307.s3tc.ctex"
+uid="uid://d4ewtk3rx2lbi"
+path.s3tc="res://.godot/imported/madera oscura.PNG-900e5a590c2d1c57d0828d901ea15004.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ generator_parameters={}
 
 [deps]
 
-source_file="res://Modelos/textures/madera oscura.png"
-dest_files=["res://.godot/imported/madera oscura.png-80c087719182032002d0f2e90ecd7307.s3tc.ctex"]
+source_file="res://Modelos/textures/madera oscura.PNG"
+dest_files=["res://.godot/imported/madera oscura.PNG-900e5a590c2d1c57d0828d901ea15004.s3tc.ctex"]
 
 [params]
 
