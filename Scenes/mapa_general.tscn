@@ -5,6 +5,9 @@
 [ext_resource type="Shape3D" uid="uid://cqmbbj4xqk777" path="res://pj.tres" id="3_3udvk"]
 [ext_resource type="SpriteFrames" uid="uid://c0g1dxgwmyf6n" path="res://Sprites/Mati/Normal/Mati_Humano.tres" id="4_relhg"]
 [ext_resource type="Texture2D" uid="uid://utfxn2g74key" path="res://Modelos/texturas_nuestras/fondo.png" id="5_relhg"]
+[ext_resource type="Script" uid="uid://c2lhp3krbc857" path="res://Scripts/Interaccion/Area_Interaccion.gd" id="6_nqb6i"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_3gkk6"]
 
 [sub_resource type="Environment" id="Environment_f6yfp"]
 background_energy_multiplier = 0.38
@@ -26,6 +29,10 @@ albedo_texture = ExtResource("5_relhg")
 [sub_resource type="PlaneMesh" id="PlaneMesh_f6yfp"]
 material = SubResource("StandardMaterial3D_3gkk6")
 
+[sub_resource type="BoxMesh" id="BoxMesh_f6yfp"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_f6yfp"]
+
 [node name="mapa-general" type="Node3D" unique_id=1495185574]
 
 [node name="Villa Metamorfosis v1" parent="." unique_id=236234595 instance=ExtResource("1_s84pg")]
@@ -46,9 +53,29 @@ transform = Transform3D(-6.5567085e-09, 0, 0.15, 0, 0.15, 0, -0.15, 0, -6.556708
 sprite_frames = ExtResource("4_relhg")
 animation = &"caminata"
 
+[node name="Area3D" type="Area3D" parent="Personaje" unique_id=1843934653]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Personaje/Area3D" unique_id=702642708]
+shape = SubResource("BoxShape3D_3gkk6")
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1327019073]
 environment = SubResource("Environment_f6yfp")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=667573451]
 transform = Transform3D(-2.5656832e-06, 3.2000005, -1.4993148e-21, -7.69705e-06, -6.9738997e-15, -7.080314, -58.695984, -1.3987645e-07, 9.2847097e-07, -12.054823, 6, -1.4760361)
 mesh = SubResource("PlaneMesh_f6yfp")
+
+[node name="Interaccion" type="MeshInstance3D" parent="." unique_id=1230483803]
+transform = Transform3D(0.9999985, 0.0008723655, -0.0014941659, -0.0008631206, 0.99998057, 0.0061747693, 0.0014995252, -0.00617347, 0.9999798, 0, 1, 34.00931)
+mesh = SubResource("BoxMesh_f6yfp")
+
+[node name="Area3D" type="Area3D" parent="Interaccion" unique_id=1931079505]
+script = ExtResource("6_nqb6i")
+dialogo = ["¡Hola!\\n Soy un diálogo de prueba", "Me voy"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Interaccion/Area3D" unique_id=768806477]
+transform = Transform3D(1, 2.4556357e-11, 0, -4.456524e-11, 1, 0, -1.1641532e-10, -4.656613e-10, 1, 0, 0, 0)
+shape = SubResource("BoxShape3D_f6yfp")
+
+[connection signal="area_entered" from="Personaje/Area3D" to="Personaje" method="enColision"]
+[connection signal="area_exited" from="Personaje/Area3D" to="Personaje" method="saleColision"]

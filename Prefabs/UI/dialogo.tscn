@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://dunxxvmpynv47"]
+
+[ext_resource type="Script" uid="uid://c3ylwuwnbrvl2" path="res://Scripts/Dialogos/Dialogo.gd" id="1_5bypf"]
+
+[node name="Dialogo" type="Control" unique_id=2102670104]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5bypf")
+
+[node name="Fondo" type="ColorRect" parent="." unique_id=281445852]
+layout_mode = 0
+offset_left = 47.0
+offset_top = 479.0
+offset_right = 1101.0
+offset_bottom = 627.0
+color = Color(0.14117648, 0.14117648, 0.14117648, 0.49803922)
+
+[node name="Texto" type="RichTextLabel" parent="." unique_id=89829307]
+layout_mode = 0
+offset_left = 71.0
+offset_top = 488.0
+offset_right = 1078.0
+offset_bottom = 619.0
+fit_content = true
+scroll_active = false
